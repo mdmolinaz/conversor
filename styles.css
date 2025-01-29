@@ -1,56 +1,91 @@
+/* Estilos generales */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  color: white;
 }
 
+/* Contenedor principal */
 .container {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   text-align: center;
-  width: 300px;
+  width: 90%;
+  max-width: 350px;
+  backdrop-filter: blur(10px);
 }
 
+/* Títulos */
 h1 {
-  margin-bottom: 20px;
-  font-size: 1.5rem;
-  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  font-weight: bold;
 }
 
-.converter, form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
+/* Formularios y selectores */
 input, select, button {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 8px;
   font-size: 1rem;
 }
 
-button {
-  background-color: #007bff;
+/* Campos de entrada */
+input, select {
+  background: rgba(255, 255, 255, 0.2);
   color: white;
-  border: none;
-  cursor: pointer;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
-button:hover {
-  background-color: #0056b3;
+/* Placeholder en color blanco */
+input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
 }
 
-#result {
-  margin-top: 15px;
-  font-size: 1.2rem;
+/* Efecto en los inputs y selects */
+input:focus, select:focus {
+  border-color: #ffdd57;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Botón principal */
+button {
+  background: #ffdd57;
   color: #333;
   font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Efecto hover en el botón */
+button:hover {
+  background: #ffcc00;
+}
+
+/* Resultado */
+#result {
+  margin-top: 15px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Para dispositivos móviles */
+@media (max-width: 400px) {
+  h1 {
+    font-size: 1.5rem;
+  }
 }
