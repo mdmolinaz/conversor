@@ -24,7 +24,7 @@ h1 {
   color: #333;
 }
 
-.converter {
+.converter, form {
   display: flex;
   flex-direction: column;
   gap: 10px;
