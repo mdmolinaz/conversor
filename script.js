@@ -5,14 +5,14 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById('exchangeRateForm').addEventListener('submit', (e) => {
           e.preventDefault();
 
-          // Obtener los valores ingresados
+          // Obtener los valores ingresados (permitiendo decimales)
           const usdRate = parseFloat(document.getElementById('usdRate').value);
           const eurRate = parseFloat(document.getElementById('eurRate').value);
 
           // Validar entrada
-          if (!isNaN(usdRate) && !isNaN(eurRate)) {
-              localStorage.setItem('usdRate', usdRate);
-              localStorage.setItem('eurRate', eurRate);
+          if (!isNaN(usdRate) && usdRate > 0 && !isNaN(eurRate) && eurRate > 0) {
+              localStorage.setItem('usdRate', usdRate.toFixed(2)); // Guardar con dos decimales
+              localStorage.setItem('eurRate', eurRate.toFixed(2)); // Guardar con dos decimales
               alert('Tasas guardadas exitosamente.');
               window.location.href = 'conversion.html'; // Redirigir a la página de conversión
           } else {
